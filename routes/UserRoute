@@ -1,0 +1,13 @@
+package routes
+
+import (
+	"go-mvc-mongo/controllers"
+
+	"github.com/gorilla/mux"
+)
+
+func SetupRoutes() *mux.Router {
+	router := mux.NewRouter()
+	router.HandleFunc("/user", controllers.CreateUser).Methods("POST")
+	return router
+}
